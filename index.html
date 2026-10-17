@@ -19,6 +19,13 @@ h1,h2,h3,h4{color:#FFFFFF}
 .bub{animation:pop .35s ease both}
 @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 details summary::-webkit-details-marker{display:none}
+.mesh{position:absolute;border-radius:9999px;filter:blur(140px);pointer-events:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;border-radius:0.85rem;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease}
+.btn:hover{transform:scale(1.03)}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:linear-gradient(to bottom,#2be36f,#1eb856);color:#fff;box-shadow:0 10px 30px -8px rgba(37,211,102,.45)}
+.btn-secondary{background:rgba(255,255,255,.05);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);color:#fff}
+.btn-secondary:hover{border-color:rgba(37,211,102,.6)}
 details[open] .chev{transform:rotate(180deg)}
 @media(prefers-reduced-motion:reduce){.bub{animation:none}}
 :focus-visible{outline:2px solid #128C7E;outline-offset:2px}
@@ -40,10 +47,10 @@ details[open] .chev{transform:rotate(180deg)}
       <li><a class="hover:text-wadark" href="#faqs">FAQs</a></li>
     </ul>
     <div class="flex items-center gap-2">
-      <a href="https://app.wazone.io/signup" class="hidden sm:inline-flex bg-wa hover:bg-[#1fbd5b] text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-sm shadow-green-500/30">Launch App</a>
+      <a href="https://app.wazone.io/signup" class="btn btn-primary hidden sm:inline-flex text-sm px-5 py-2.5">Launch App</a>
       <button id="burger" class="md:hidden p-2 rounded-lg border border-white/10" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-        <svg id="ico-open" width="22" height="22" fill="none" stroke="#1E293B" stroke-width="2" stroke-linecap="round"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
-        <svg id="ico-close" class="hidden" width="22" height="22" fill="none" stroke="#1E293B" stroke-width="2" stroke-linecap="round"><path d="M5 5l12 12M17 5L5 17"/></svg>
+        <svg id="ico-open" width="22" height="22" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M3 6h16M3 11h16M3 16h16"/></svg>
+        <svg id="ico-close" class="hidden" width="22" height="22" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M5 5l12 12M17 5L5 17"/></svg>
       </button>
     </div>
   </nav>
@@ -60,15 +67,20 @@ details[open] .chev{transform:rotate(180deg)}
 
 <main>
 <!-- HERO -->
-<section class="relative overflow-hidden bg-gradient-to-b from-green-500/15 via-[#0B0F14] to-[#0B0F14]">
+<section class="relative overflow-hidden bg-[#0B0F14]">
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+    <div class="mesh w-[560px] h-[560px] bg-wa/15 -top-40 right-[-8%]"></div>
+    <div class="mesh w-[480px] h-[480px] bg-violet-500/10 top-64 left-[-10%]"></div>
+    <div class="mesh w-[600px] h-[300px] bg-wa/[0.07] bottom-[-10%] left-[30%]"></div>
+  </div>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-14 pb-16 lg:pt-20 grid lg:grid-cols-2 gap-12 items-center">
     <div>
       <p class="inline-block text-sm font-semibold text-wadark bg-[#151D2A] border border-green-500/25 rounded-full px-3.5 py-1 mb-5">WhatsApp AI chatbot for growing businesses</p>
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight">The lead you answer first is the lead you win. Wazone answers in seconds.</h1>
-      <p class="mt-5 text-lg leading-relaxed max-w-xl">Every minute a WhatsApp enquiry sits unread, a competitor gets closer to the sale. Wazone replies instantly, 24/7, qualifies the lead, books the appointment, and hands the warm chats to your team, so nothing slips through while you sleep, eat, or work with another customer.</p>
+      <h1 class="text-5xl sm:text-6xl font-extrabold leading-[1.05] tracking-tight text-white">Never miss a <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#25D366] to-[#8df5b0]">WhatsApp lead</span> again.</h1>
+      <p class="mt-5 text-lg leading-relaxed max-w-xl text-slate-400">Wazone is an AI chatbot that answers every WhatsApp enquiry in seconds, qualifies the lead and books the appointment while you sleep. No developer, no Meta approval, and no credit card required to start.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-3">
-        <a href="https://app.wazone.io/signup" class="text-center bg-wa hover:bg-[#1fbd5b] text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-green-500/25">Start my free 1-month demo</a>
-        <a href="#use-cases" class="text-center bg-[#151D2A] border border-white/15 hover:border-wa text-white font-bold px-7 py-3.5 rounded-xl">See a live chat</a>
+        <a href="https://app.wazone.io/signup" class="btn btn-primary text-center px-8 py-4 text-base">Start free today</a>
+        <a href="#use-cases" class="btn btn-secondary text-center px-8 py-4 text-base">See it in action</a>
       </div>
       <ul class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-white">
         <li class="flex items-center gap-2"><svg width="18" height="18" viewBox="0 0 20 20" fill="#25D366"><path d="M10 0a10 10 0 100 20 10 10 0 000-20zm4.500 7.600l-5.200 5.400a.9.9 0 01-1.300 0L5.500 10.500a.9.9 0 011.300-1.300l1.800 1.800 4.600-4.700a.9.9 0 011.300 1.300z"/></svg>No credit card required</li>
@@ -102,9 +114,10 @@ details[open] .chev{transform:rotate(180deg)}
 </section>
 
 <!-- USE CASES -->
-<section id="use-cases" class="py-20 bg-mist border-y border-white/10">
+<section id="use-cases" class="py-24 lg:py-28 bg-mist border-y border-white/10">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-12 items-center">
     <div>
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-wa mb-4">Live demos</p>
       <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Built for the conversations your industry actually has</h2>
       <p class="mt-4 text-lg">Pick from 13 industries and watch real chat screens play out, with 3 screens per industry. Every reply, menu, and reminder here runs automatically on Wazone.</p>
       <div id="tabs" class="mt-6 flex flex-wrap gap-2" role="tablist"></div>
@@ -127,9 +140,10 @@ details[open] .chev{transform:rotate(180deg)}
 </section>
 
 <!-- FEATURES -->
-<section id="features" class="py-20">
+<section id="features" class="py-24 lg:py-28">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-wa mb-4">Features</p>
       <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Everything your team needs to turn chats into customers</h2>
       <p class="mt-4 text-lg">The bot handles the repetitive questions. Your people handle the conversations worth their time.</p>
     </div>
@@ -138,21 +152,23 @@ details[open] .chev{transform:rotate(180deg)}
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="py-20 bg-mist border-y border-white/10">
+<section class="py-24 lg:py-28 bg-mist border-y border-white/10">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <p class="text-xs font-bold uppercase tracking-[0.25em] text-wa mb-4">Getting started</p>
     <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight max-w-2xl">From sign-up to your first automated reply in three steps</h2>
     <div class="mt-10 grid md:grid-cols-3 gap-5">
-      <div class="bg-[#151D2A] border border-white/10 rounded-2xl p-6"><div class="w-9 h-9 rounded-full bg-wa text-white font-bold flex items-center justify-center">1</div><h3 class="mt-4 text-lg font-bold">Link your WhatsApp number</h3><p class="mt-2 text-[15px] leading-relaxed">Create a free account and connect your number from inside the app. No developer, no waiting on approvals.</p></div>
-      <div class="bg-[#151D2A] border border-white/10 rounded-2xl p-6"><div class="w-9 h-9 rounded-full bg-wa text-white font-bold flex items-center justify-center">2</div><h3 class="mt-4 text-lg font-bold">Teach the bot your business</h3><p class="mt-2 text-[15px] leading-relaxed">Add your services, prices, hours and common questions. Pick an industry flow, or build your own menu.</p></div>
-      <div class="bg-[#151D2A] border border-white/10 rounded-2xl p-6"><div class="w-9 h-9 rounded-full bg-wa text-white font-bold flex items-center justify-center">3</div><h3 class="mt-4 text-lg font-bold">Go live and let your team step in</h3><p class="mt-2 text-[15px] leading-relaxed">The bot answers instantly. When a chat needs a person, it hands over with the full history so nothing is repeated.</p></div>
+      <div class="bg-[#151D2A] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-wa/40 hover:shadow-[0_20px_50px_-20px_rgba(37,211,102,0.3)]"><div class="w-9 h-9 rounded-full bg-wa text-white font-bold flex items-center justify-center">1</div><h3 class="mt-4 text-lg font-bold">Link your WhatsApp number</h3><p class="mt-2 text-[15px] leading-relaxed">Create a free account and connect your number from inside the app. No developer, no waiting on approvals.</p></div>
+      <div class="bg-[#151D2A] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-wa/40 hover:shadow-[0_20px_50px_-20px_rgba(37,211,102,0.3)]"><div class="w-9 h-9 rounded-full bg-wa text-white font-bold flex items-center justify-center">2</div><h3 class="mt-4 text-lg font-bold">Teach the bot your business</h3><p class="mt-2 text-[15px] leading-relaxed">Add your services, prices, hours and common questions. Pick an industry flow, or build your own menu.</p></div>
+      <div class="bg-[#151D2A] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-wa/40 hover:shadow-[0_20px_50px_-20px_rgba(37,211,102,0.3)]"><div class="w-9 h-9 rounded-full bg-wa text-white font-bold flex items-center justify-center">3</div><h3 class="mt-4 text-lg font-bold">Go live and let your team step in</h3><p class="mt-2 text-[15px] leading-relaxed">The bot answers instantly. When a chat needs a person, it hands over with the full history so nothing is repeated.</p></div>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="py-20 bg-gradient-to-b from-[#0B0F14] to-green-500/10 border-t border-white/10">
+<section id="pricing" class="py-24 lg:py-28 bg-gradient-to-b from-[#0B0F14] to-green-500/10 border-t border-white/10">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="text-center max-w-2xl mx-auto">
+      <p class="text-xs font-bold uppercase tracking-[0.25em] text-wa mb-4">Pricing</p>
       <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Simple pricing that grows with your inbox</h2>
       <p class="mt-4 text-lg">Start free with 1 WhatsApp number and 100 AI credits. No credit card required. Upgrade when your chats do.</p>
     </div>
@@ -162,12 +178,13 @@ details[open] .chev{transform:rotate(180deg)}
 </section>
 
 <!-- FAQ -->
-<section id="faqs" class="py-20">
+<section id="faqs" class="py-24 lg:py-28">
   <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <p class="text-xs font-bold uppercase tracking-[0.25em] text-wa mb-4 text-center">FAQ</p>
     <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-center">Questions to settle before you start</h2>
     <div class="mt-10 space-y-3" id="faqList"></div>
     <div class="mt-10 text-center">
-      <a href="https://app.wazone.io/signup" class="inline-block bg-wa hover:bg-[#1fbd5b] text-white font-bold px-8 py-3.5 rounded-xl shadow-lg shadow-green-500/25">Start my free 1-month demo</a>
+      <a href="https://app.wazone.io/signup" class="btn btn-primary inline-block px-8 py-4">Start my free 1-month demo</a>
     </div>
   </div>
 </section>
@@ -272,7 +289,8 @@ const FEATURES=[
 ['Instant replies, 24/7','Customers get an answer in seconds at 2 AM or during a lunch rush, so the first business to reply is always yours.',ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>')],
 ['Media and file sharing','Send brochures, price lists, photos, location pins and PDFs inside the chat, without leaving WhatsApp.',ic('<path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>')],
 ['Contacts, tags and CSV export','Every conversation builds a contact record. Filter, tag and export your leads whenever you need them.',ic('<path d="M4 4h16v16H4zM4 9h16M9 4v16"/>')]];
-document.getElementById('featureGrid').innerHTML=FEATURES.map(f=>`<div class="bg-[#151D2A] border border-white/10 rounded-2xl p-6 hover:border-wa/60 transition-colors"><div class="w-11 h-11 rounded-xl bg-green-500/10 border border-green-500/25 flex items-center justify-center">${f[2]}</div><h3 class="mt-4 text-lg font-bold">${f[0]}</h3><p class="mt-2 text-[15px] leading-relaxed">${f[1]}</p></div>`).join('');
+const SPANS={0:'lg:col-span-2',3:'lg:col-span-2'};
+document.getElementById('featureGrid').innerHTML=FEATURES.map((f,i)=>`<div class="${SPANS[i]||''} group rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur p-6 transition-all duration-300 hover:-translate-y-1 hover:border-wa/40 hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.25)]"><div class="w-11 h-11 rounded-xl bg-green-500/10 border border-green-500/25 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">${f[2]}</div><h3 class="mt-4 text-lg font-bold">${f[0]}</h3><p class="mt-2 text-[15px] leading-relaxed text-slate-400">${f[1]}</p></div>`).join('')+`<a href="${SIGNUP}" class="group rounded-2xl border border-wa/40 bg-gradient-to-br from-wa/25 via-[#151D2A] to-[#151D2A] p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_60px_-15px_rgba(37,211,102,0.35)]"><div><h3 class="text-xl font-extrabold text-white">Ready to stop losing leads?</h3><p class="mt-2 text-[15px] text-slate-300">Start free and have your first automated reply live today.</p></div><span class="mt-6 inline-flex items-center gap-2 font-bold text-wa">Start free today <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span></span></a>`;
 
 // ---------- Pricing (from Plan Building Guide; PKR list prices, USD approx at ~Rs 280/USD) ----------
 const PLANS=[
